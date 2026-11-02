@@ -20,6 +20,14 @@ function createGrid(squaresPerSide) {
     container.appendChild(cell)
 }
 }
-createGrid(60)
+
+button.addEventListener("click", function(){
+    input = prompt("Input a number for your new layout, between 1 to 100");
+    let newGrid = parseInt(input)
+    createGrid(newGrid)
+})
+
+
+createGrid(16)
 
 
