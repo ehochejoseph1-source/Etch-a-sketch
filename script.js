@@ -1,6 +1,11 @@
 const container = document.getElementById("container")
 let button = document.getElementById("refresh")
 
+ let mouseIsDown = false;
+
+ window.addEventListener("mousedown", () => mouseIsDown = true);
+ window.addEventListener("mouseup", () => mouseIsDown = false);
+
 
 function createGrid(squaresPerSide) {
    container.innerHTML = "";
@@ -14,9 +19,13 @@ function createGrid(squaresPerSide) {
     
     
 
-    cell.addEventListener("mouseenter", function(){
+    cell.addEventListener("mouseover", function(){
+        if (!mouseIsDown) {
+            return;
+        }
         cell.style.backgroundColor = "red"
     })
+    cell.addEventListener("mousedown", () => cell.style.backgroundColor = "red" )
     container.appendChild(cell)
 }
 }
