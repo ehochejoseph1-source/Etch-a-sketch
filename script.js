@@ -23,7 +23,11 @@ function createGrid(squaresPerSide) {
         if (!mouseIsDown) {
             return;
         }
-        cell.style.backgroundColor = "red"
+
+        let randomR = Math.floor(Math.random() * 256);
+        let randomG = Math.floor(Math.random() * 256);
+        let randomB = Math.floor(Math.random() * 256);
+        cell.style.backgroundColor = `rgb( ${randomR}, ${randomG}, ${randomB})`
     })
     cell.addEventListener("mousedown", () => cell.style.backgroundColor = "red" )
     container.appendChild(cell)
